@@ -1,0 +1,56 @@
+--Chris Della Donna--
+--SQL Queries Homework 1--
+
+1. List all data for all customers
+  Select *
+  From customers;
+  
+2.  List the name and city of agents named Smith
+  Select agents.name, agents.city
+  From public.agents
+  Where agents.name = 'Smith' ;
+  
+3. List pid, name, and quantity of products costing more than US$1.25
+  Select products.pid, products.name, products.quantity
+  From public.products
+  Where products.priceusd > 1.25 ;
+  
+4. List the ordno and aid of all orders
+  Select orders.ordno, orders.aid
+  From public.orders ;
+  
+5. List the names and cities of customers not in Dallas
+  Select customers.name, customers.city
+  From public.customers
+  Where customers.city != 'Dallas' ;
+  
+6. List the names of agents in New York or Newark
+ Select agents.name
+  From public.agents
+  Where agents.city = 'New York'
+  OR agents.city = 'Newark' ;
+  
+7. List all data for products not in New York or Newark that cost US$1 or less
+  Select products.*
+  From public.products
+  Where products.city != 'New York'
+  AND products.city != 'Newark'
+  AND products.priceusd <= 1.00 ;
+  
+8. List all data for orders in January or March
+  Select orders.*
+  From public.orders
+  Where orders.mon = 'jan'
+  OR orders.mon = 'mar';
+  
+9. List all data for orders in February less than US$100
+  Select orders.*
+  From public.orders
+  Where orders.mon = 'feb'
+  AND orders.dollars < 100 ;
+  
+10. List all orders from the customer whose cid is C005
+  Select orders.*
+  From public.orders
+  Where orders.cid = 'c005';
+  
